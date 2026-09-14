@@ -1,0 +1,27 @@
+workflows:
+  android-debug:
+    name: Generals Mod Editor - Debug
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      java: 11
+    scripts:
+      - name: Generate Gradle wrapper
+        script: gradle wrapper --gradle-version 7.5.1
+      - name: Build debug APK
+        script: ./gradlew assembleDebug
+    artifacts:
+      - build/outputs/apk/debug/*.apk
+  android-release:
+    name: Generals Mod Editor - Release
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      java: 11
+    scripts:
+      - name: Generate Gradle wrapper
+        script: gradle wrapper --gradle-version 7.5.1
+      - name: Build release APK
+        script: ./gradlew assembleRelease
+    artifacts:
+      - build/outputs/apk/release/*.apk
