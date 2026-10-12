@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' version '7.4.2' }
+
+android {
+    namespace 'com.nosirov.bigtool'
+    compileSdk 33
+    defaultConfig {
+        applicationId 'com.nosirov.bigtool'
+        minSdk 23
+        targetSdk 33
+        versionCode 50
+        versionName '5.0.0'
+    }
+}
